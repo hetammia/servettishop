@@ -1,0 +1,9 @@
+h1, h2, h3 {
+  color: rgb(64, 97, 128);
+  font-family: Arial;
+}
+
+body {
+  color: black;
+  font-family: Segoe UI;
+}
