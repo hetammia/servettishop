@@ -12,6 +12,8 @@ const SelectionForm = () => {
   const [selectedMaterial, setMaterial] = useState('cotton')
   const [selectedColour, setColour] = useState('white')
   const [selectedQuantity, setQuantity] = useState('10')
+  const [startDate, setStartDate] = useState('')
+  const [endDate, setEndDate] = useState('')
 
   const handleMaterialChange = (event) => {
     setMaterial(event.target.value)
@@ -22,9 +24,15 @@ const SelectionForm = () => {
   const handleQuantityChange = (event) => {
     setQuantity(event.target.value)
   }
+  const handleStartDateChange = (event) => {
+    setStartDate(event.target.value)
+  }
+  const handleEndDateChange = (event) => {
+    setEndDate(event.target.value)
+  }
 
   const handleSubmit = (event) => {
-    alert(`You are purchasing ${selectedQuantity} ${selectedColour} ${selectedMaterial} napkins`)
+    alert(`You are renting ${selectedQuantity} ${selectedColour} ${selectedMaterial} napkins from ${startDate} until ${endDate}.`)
     event.preventDefault()
   }
 
@@ -122,7 +130,27 @@ const SelectionForm = () => {
           /> 100
         </label>
         <br/>
-        <button type='submit'>Purchase</button>
+        Rent start: 
+        <label>
+          <input
+            type='text'
+            name='startDate'
+            value={startDate}
+            onChange={handleStartDateChange}
+          />
+        </label>
+        <br/>
+        Rent end: 
+        <label>
+          <input
+            type='text'
+            name='endDate'
+            value={endDate}
+            onChange={handleEndDateChange}
+          />
+        </label>
+        <br/>
+        <button type='submit'>Rent</button>
       </div>
     </form>
   )
