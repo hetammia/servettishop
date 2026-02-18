@@ -8,6 +8,7 @@ const Header = () => {
     </div>
   )
 }
+
 const SelectionForm = () => {
   const [selectedMaterial, setMaterial] = useState('cotton')
   const [selectedColour, setColour] = useState('white')
@@ -130,10 +131,12 @@ const SelectionForm = () => {
           /> 100
         </label>
         <br/>
+
+        <h3>Rent time</h3>
         Rent start: 
         <label>
           <input
-            type='text'
+            type='date'
             name='startDate'
             value={startDate}
             onChange={handleStartDateChange}
@@ -143,7 +146,7 @@ const SelectionForm = () => {
         Rent end: 
         <label>
           <input
-            type='text'
+            type='date'
             name='endDate'
             value={endDate}
             onChange={handleEndDateChange}
